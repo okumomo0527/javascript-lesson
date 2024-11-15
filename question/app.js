@@ -1,12 +1,9 @@
-let nickname = '私のニックネームはごっしーです。';
-let age = '年齢は28歳です。';
-console.log(nickname + age);
+let nickname = 'ごっしー';
+let age = 28;
+console.log('私のニックネームは' + nickname + 'です。年齢は' + age + '歳です。');
 
 let languages = ['JavaScript', 'PHP', 'Ruby', 'Python', 'Go'];
-let like = '私の好きな言語は' + languages[0] + 'です。';
-let study = '次は' + languages[3] + 'を勉強してみたいです。';
-
-console.log(like + study);
+console.log(`私の好きな言語は${languages[0]}です。次は${languages[3]}を勉強してみたいです。`);
 
 let user = {
   name: 'John',
@@ -37,7 +34,11 @@ let playerList = [
 
 console.log(playerList[1].favorites[1]);
 
-let averageAge = (playerList[0].age + playerList[1].age + playerList[2].age) / 3;
+let averageAge = playerList.reduce(function (acc, cur) {
+  return acc + cur.age;
+}, 0);
+
+averageAge = averageAge / playerList.length;
 
 console.log(averageAge);
 
@@ -97,12 +98,12 @@ function remainder (x, y) {
   return x % y;
 }
 
-let x = 5;
-let y = 3;
+let firstNum = 5;
+let secondNum = 3;
 
-let calculation = remainder(x, y);
+let calculation = remainder(firstNum, secondNum);
 
-console.log(x + 'を' + y + 'で割った余りは' + calculation + 'です。');
+console.log(firstNum + 'を' + secondNum + 'で割った余りは' + calculation + 'です。');
 
 // 関数の中で定義した変数はローカル変数といい、関数内でのみスコープが有効となっているため、関数の外で参照できないからです。
 
