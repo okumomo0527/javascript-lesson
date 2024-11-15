@@ -106,4 +106,36 @@ console.log(x + 'を' + y + 'で割った余りは' + calculation + 'です。')
 
 // 関数の中で定義した変数はローカル変数といい、関数内でのみスコープが有効となっているため、関数の外で参照できないからです。
 
+let random = Math.floor(Math.random() * 10);
+console.log(random);
 
+setTimeout(() => {
+  console.log("Hello World!");
+}, 3000);
+
+let num = 7;
+if (num > 0) {
+  console.log('num is greater than 0');
+} else if (num < 0) {
+  console.log('num is less than 0');
+} else if (num === 0) {
+  console.log('num is 0');
+}
+
+let numbers = [];
+for (let i=0; i<100; i++) {
+  numbers.push(i);
+}
+console.log(numbers);
+
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+
+for (let i=0; i<mixed.length; i++) {
+  if (typeof mixed[i] === 'string') {
+    console.log('not number');
+  } else if (mixed[i] % 2 === 0) {
+    console.log('even');
+  } else if (mixed[i] % 2 !== 0) {
+    console.log('odd');
+  }
+}
